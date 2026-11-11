@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Vuelta Clips</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:#101010;
+color:white;
+text-align:center;
+}
+header{
+background:#d40000;
+padding:30px 15px;
+}
+h1{font-size:36px;margin:0}
+header p{margin:10px 0 0}
+main{padding:25px 15px;max-width:650px;margin:auto}
+.card{
+background:#202020;
+padding:25px;
+border-radius:12px;
+margin-top:20px;
+}
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border-radius:7px;
+border:0;
+font-size:15px;
+}
+button{
+background:#e00000;
+color:white;
+border:0;
+padding:14px 22px;
+border-radius:7px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+}
+button:hover{background:#aa0000}
+#resultado{margin-top:20px;overflow-wrap:anywhere}
+a{color:#ff5555}
+footer{padding:25px;color:#999;font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+<h1>🏠 LA VUELTA CLIPS</h1>
+<p>Los mejores momentos en un solo lugar</p>
+</header>
+
+<main>
+<div class="card">
+<h2>Bienvenido a La Vuelta Clips</h2>
+<p>Introduce el enlace de un video de YouTube.</p>
+
+<input id="youtube" type="url"
+placeholder="Pega aquí el enlace de YouTube">
+
+<button onclick="procesar()">Procesar enlace</button>
+
+<div id="resultado"></div>
+</div>
+
+<div class="card">
+<h2>🎬 Tus mejores momentos</h2>
+<p>Prepara y organiza tus clips favoritos.</p>
+<p>Comparte los momentos más interesantes.</p>
+</div>
+</main>
+
+<footer>
+La Vuelta Clips © 2026
+</footer>
+
+<script>
+function procesar(){
+const enlace=document.getElementById("youtube").value.trim();
+const resultado=document.getElementById("resultado");
+
+if(!enlace.includes("youtube.com") &&
+!enlace.includes("youtu.be")){
+resultado.innerHTML="Introduce un enlace válido de YouTube.";
+return;
+}
+
+resultado.innerHTML=
+"Enlace recibido.<br><br>"+
+"Este prototipo todavía no procesa ni descarga clips automáticamente. "+
+"Para hacerlo necesitaremos conectar un servicio de procesamiento autorizado.";
+}
+</script>
+
+</body>
+</html>
